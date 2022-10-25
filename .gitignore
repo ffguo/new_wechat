@@ -1,0 +1,12 @@
+bin
+obj
+Dockerfile
+.gitlab-ci.yml
+.vs
+logs
+/Properties/PublishProfiles
+.csproj
+.csproj
+.user
+
+/XUnitTest/XUnitTest.csproj.user
