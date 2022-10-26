@@ -16,9 +16,11 @@ jobs:
         uses: actions/setup-dotnet@v1
         with:
           dotnet-version: 6.0.x
-      - name: Dotnet Publish
-        run: |
-          dotnet publish TestWechat -c Release -o deploy
-      - name: weixin
-        run: |
-          dotnet deploy/TestWechat.dll
+      - name: Install dependencies
+        run: dotnet restore
+      
+      - name: Build
+        run: dotnet build --configuration Release --no-restore
+      
+      - name: Run
+        run: dotnet run -p ./TestWechat
